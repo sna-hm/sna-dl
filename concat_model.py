@@ -11,13 +11,13 @@ from spektral.utils.convolution import normalized_adjacency
 from spektral.utils.data import Batch
 
 # Load data
-X_train_A, y_train_A = load('datasets/tr_ma.npy', allow_pickle=True), load('datasets/tr_may.npy', allow_pickle=True)
-X_test_A, y_test_A = load('datasets/te_ma.npy', allow_pickle=True), load('datasets/te_may.npy', allow_pickle=True)
-X_val_A, y_val_A = load('datasets/val_ma.npy', allow_pickle=True), load('datasets/val_may.npy', allow_pickle=True)
+X_train_A, y_train_A = load('tr_ma.npy', allow_pickle=True), load('tr_may.npy', allow_pickle=True)
+X_test_A, y_test_A = load('te_ma.npy', allow_pickle=True), load('te_may.npy', allow_pickle=True)
+X_val_A, y_val_A = load('val_ma.npy', allow_pickle=True), load('val_may.npy', allow_pickle=True)
 
-X_train_B, A_train_B, y_train_B = load('datasets/tr_feat.npy', allow_pickle=True), list(load('datasets/tr_adj.npy', allow_pickle=True)), load('datasets/tr_class.npy', allow_pickle=True)
-X_test_B, A_test_B, y_test_B = load('datasets/te_feat.npy', allow_pickle=True), list(load('datasets/te_adj.npy', allow_pickle=True)), load('datasets/te_class.npy', allow_pickle=True)
-X_val_B, A_val_B, y_val_B = load('datasets/val_feat.npy', allow_pickle=True), list(load('datasets/val_adj.npy', allow_pickle=True)), load('datasets/val_class.npy', allow_pickle=True)
+X_train_B, A_train_B, y_train_B = load('tr_feat.npy', allow_pickle=True), list(load('tr_adj.npy', allow_pickle=True)), load('tr_class.npy', allow_pickle=True)
+X_test_B, A_test_B, y_test_B = load('te_feat.npy', allow_pickle=True), list(load('te_adj.npy', allow_pickle=True)), load('te_class.npy', allow_pickle=True)
+X_val_B, A_val_B, y_val_B = load('val_feat.npy', allow_pickle=True), list(load('val_adj.npy', allow_pickle=True)), load('val_class.npy', allow_pickle=True)
 
 # Preprocessing adjacency matrices for convolution
 A_train_B = [normalized_adjacency(a) for a in A_train_B]
