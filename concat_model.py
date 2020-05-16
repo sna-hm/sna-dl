@@ -50,7 +50,7 @@ model = final_model()
 X_tr, A_tr, I_tr = Batch(A_train_B, X_train_B).get('XAI')
 A_tr = sp_matrix_to_sp_tensor(A_tr)
 
-# Constructing model_B training input data
+# Constructing model_B validating input data
 X_val, A_val, I_val = Batch(A_val_B, X_val_B).get('XAI')
 A_val = sp_matrix_to_sp_tensor(A_val)
 
